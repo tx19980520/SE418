@@ -1,0 +1,4 @@
+body { margin: 0; padding: 0; font-family: "Arial Black"; }
+#slogan { text-align: center; font-size: 46px; margin-top: 20%; color: #fff; }
+#slogan span { color: #ff0 }
+#slogan span.selected { background: #09f; color: #fff; }

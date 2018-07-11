@@ -1,0 +1,26 @@
+{
+  "name": "wordladder",
+  "version": "1.0.0",
+  "description": "word ladder projects (contains unit test)",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test.js --report mochawesome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tx19980520/Wordladder.git"
+  },
+  "author": "TY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tx19980520/Wordladder/issues"
+  },
+  "homepage": "https://github.com/tx19980520/Wordladder#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.0.2"
+  }
+}

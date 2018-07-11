@@ -1,0 +1,42 @@
+.myns > div {
+    box-shadow: 0 0 6px white, inset 0 0 6px white;
+}
+.body-margin{
+	margin-top:100px;
+}
+.loading-margin{
+	margin-top: 30px;
+}
+.valid-block{
+	visible:hidden
+}
+.font-fixed{
+	font-weight: bolder;
+	font-size: 20px;
+    color: #eacb63;
+    text-shadow: 0 0 10px #eacb63;
+	
+}
+body { 
+	margin: 0; 
+	padding: 0; 
+	font-family: "Arial Black"; 
+	background-repeat: 
+	no-repeat; 
+	background-color: #222222; 
+	background-size: 100%; 
+}
+
+#slogan { 
+	text-align: center; 
+	font-size: 46px; 
+	margin-top: 20%; 
+	color: #fff; 
+}
+#slogan span { 
+	color: #ff0 
+}
+#slogan span.selected { 
+	background: #09f; 
+	color: #fff; 
+}
