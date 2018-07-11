@@ -94,14 +94,13 @@ describe('UI', function() {
                                     "d we have or you may input an error word.");
                             })
                         })
-                });
+                    });
                 })
             });
         })
     })
     afterEach(function() {
         // runs after all tests in this block
-
         driver.quit();//关闭浏览器
     });
 });
@@ -115,7 +114,7 @@ describe('Wordladder BBD', function() {
         wd = new Wordladder("./test.json");
         wd.SetInput("data");
         wd.SetOutput("code");
-    } );
+    });
 	
 	
     describe('search whether the word is in the dictionary', function() {
