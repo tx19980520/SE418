@@ -8,13 +8,25 @@
 
 简要介绍项目中的重要文件
 
+- app.js
+
+  后端入口，使用Express和WordLadder类实现后端
+  
+- test.js
+  
+  用于测试的JS，测试WordLadder类中的各个接口
+
 - wordladder.js
 
-  WordLadder类的实现，字典的读取，Express框架下的http服务
+  WordLadder类的实现，字典的读取。
 
 - dictionary.json
 
   为方便读取，将原有的txt字典转化为json格式文件
+  
+- test.json
+
+  用于测试的字典json文件
 
 - private.css
 

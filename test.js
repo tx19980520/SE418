@@ -1,9 +1,11 @@
 var Wordladder = require("./wordladder.js");
 var mocha = require('mocha')
-var suite = mocha.suite;
-var setup = mocha.setup;
-var test = mocha.test;
+//var suite = mocha.suite;
+//var setup = mocha.setup;
+//var test = mocha.test;
 var assert = require('chai').assert;
+var webdriver = require('selenium-webdriver');
+var By = webdriver.By;
 
 var expect = require('chai').expect;
 
@@ -72,6 +74,39 @@ suite('Wordladder', function() {
 
     });
 });
+
+
+
+describe('UI', function() {
+    beforeEach(function () {
+        // runs before all tests in this block
+        driver = new webdriver.Builder().forBrowser('chrome').build();//启动浏览器
+    });
+    it("valid test", function() {
+        driver.get("./index.html").then(function() {
+            driver.findElement(By.id(input)).then(function(input){
+                input.sendKeys("data").then(function(){
+                    driver.findElement(By.id('output')).then(function(output){
+                        output.click().then(function(){
+                            expect(text.getText()).to.equal("Looks good!");
+                            input.click().then(function(){
+                                expect(output.getText()).to.equal("Please input a wor" +
+                                    "d we have or you may input an error word.");
+                            })
+                        })
+                });
+                })
+            });
+        })
+    })
+    afterEach(function() {
+        // runs after all tests in this block
+
+        driver.quit();//关闭浏览器
+    });
+});
+
+
 
 describe('Wordladder BBD', function() {
 	
