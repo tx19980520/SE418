@@ -4,6 +4,7 @@
   "description": "word ladder projects (contains unit test)",
   "main": "app.js",
   "scripts": {
+	"start":"node app.js",
     "test": "mocha test.js --report mochawesome"
   },
   "repository": {

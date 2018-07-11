@@ -1,3 +1,4 @@
+var fs = require('fs');
 /*
 Class: Wordladder
 Implement the function of finding the shortest path in the dictionary
@@ -7,17 +8,17 @@ function InitDict(dictPath){
     return JSON.parse(data);
 }
 
-function WordLadder()
+function WordLadder(path)
 {
     this.dict = null;
     this.Input = null;
     this.Output = null;
-    this._init();
+    this._init(path);
 }
-WordLadder.prototype._init = function() {
+WordLadder.prototype._init = function(path) {
     this.Input = "";
     this.Output = "";
-    this.dict = InitDict("./dictionary.json");
+    this.dict = InitDict(path);
 }
 
 WordLadder.prototype.SetInput = function(input) {
@@ -92,5 +93,6 @@ WordLadder.prototype.BFS = function() {
     }
     return [""];
 }
-export.module = WordLadder;
+
+module.exports = WordLadder;
 

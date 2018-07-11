@@ -1,5 +1,4 @@
-var Wordladder = require("./Wordladder");
-
+var Wordladder = require("./wordladder.js");
 var mocha = require('mocha')
 var suite = mocha.suite;
 var setup = mocha.setup;
@@ -10,11 +9,11 @@ var expect = require('chai').expect;
 
 suite('Wordladder', function() {
     setup(function() {
-       let wd = new Wordladder();
+       let wd = new Wordladder("./test.json");
     });
     //hooks function, to init the Wordladder
     suite( 'Before all tests.', function () {
-        wd = new Wordladder();
+        wd = new Wordladder("./test.json");
     });
 
 
@@ -78,7 +77,7 @@ describe('Wordladder BBD', function() {
 	
 	//hooks function, to init the Wordladder
     before( 'Before all tests.', function () {
-        wd = new Wordladder();
+        wd = new Wordladder("./test.json");
         wd.SetInput("data");
         wd.SetOutput("code");
     } );
