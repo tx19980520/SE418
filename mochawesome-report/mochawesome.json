@@ -5,52 +5,516 @@
     "passes": 10,
     "pending": 0,
     "failures": 0,
-    "start": "2018-07-11T16:46:13.021Z",
-    "end": "2018-07-11T16:46:13.058Z",
-    "duration": 37,
-    "testsRegistered": 1,
-    "passPercent": 900,
+    "start": "2018-07-12T15:01:28.730Z",
+    "end": "2018-07-12T15:01:28.763Z",
+    "duration": 33,
+    "testsRegistered": 11,
+    "passPercent": 90.9,
     "pendingPercent": 0,
-    "other": 1,
-    "hasOther": true,
-    "skipped": -8,
-    "hasSkipped": false,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true,
     "passPercentClass": "success",
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "f75ec2c1-56a7-46cd-8be3-3d0feaa39791",
-    "title": "the shortest path search",
-    "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
-    "file": "\\test.js",
+    "uuid": "4e69a501-c216-4e28-a56f-d8772e5c6960",
+    "title": "",
+    "fullFile": "",
+    "file": "",
     "beforeHooks": [],
     "afterHooks": [],
     "tests": [
       {
-        "title": "should return the shortest path to appear in sequence ",
-        "fullTitle": "Wordladder BBD the shortest path search should return the shortest path to appear in sequence ",
+        "title": "should return false when it doesn't the word.",
+        "fullTitle": "should return false when it doesn't the word.",
         "timedOut": false,
         "duration": 0,
         "pass": false,
         "fail": false,
         "pending": false,
-        "code": "expect(wd.BFS()).to.include.deep.ordered.members([ 'code', 'cote', 'cota', 'dota', 'data' ]);",
+        "code": "let check = wd.Search(\"mu\")\nassert.equal(check, false);",
         "err": {},
-        "isRoot": false,
-        "uuid": "ae910179-b19e-4190-a565-c6316af79307",
+        "isRoot": true,
+        "uuid": "df64eeef-2370-456d-9d0e-1d7b5a25e142",
         "isHook": false,
         "skipped": true
       }
     ],
-    "suites": [],
+    "suites": [
+      {
+        "uuid": "02a56761-d42f-4475-abeb-07996cdd84b0",
+        "title": "Wordladder",
+        "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+        "file": "\\test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before each\" hook",
+            "fullTitle": "Wordladder \"before each\" hook",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "let wd = new Wordladder(\"./test.json\");",
+            "err": {},
+            "isRoot": false,
+            "uuid": "2297b54b-634f-47b3-81bb-7be2b455aa64",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "9e4dd5e8-ec40-49cd-bcb1-65d088317038",
+            "title": "#Search(word)",
+            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "file": "\\test.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "should return true when it has the word.",
+                "fullTitle": "Wordladder #Search(word) should return true when it has the word.",
+                "timedOut": false,
+                "duration": 1,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "let check = wd.Search(\"data\")\nassert.equal(check, true);\n        test(\"should return false when it doesn't the word.\", function() {\nlet check = wd.Search(\"mu\")\nassert.equal(check, false);\n        });",
+                "err": {},
+                "isRoot": false,
+                "uuid": "3a2a2636-1efb-4a27-b107-552da4c0caff",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [
+              {
+                "uuid": "e978aa9e-82b0-4a69-88b6-e6979060e965",
+                "title": "#GetInput()",
+                "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+                "file": "\\test.js",
+                "beforeHooks": [],
+                "afterHooks": [],
+                "tests": [
+                  {
+                    "title": "getInput return the input",
+                    "fullTitle": "Wordladder #Search(word) #GetInput() getInput return the input",
+                    "timedOut": false,
+                    "duration": 1,
+                    "state": "passed",
+                    "speed": "fast",
+                    "pass": true,
+                    "fail": false,
+                    "pending": false,
+                    "code": "wd.Input = \"data\";\nlet input = wd.GetInput();\nassert.equal(input, \"data\", \"==\");",
+                    "err": {},
+                    "isRoot": false,
+                    "uuid": "46b7efec-2669-4d9a-807d-14bc8b124c7e",
+                    "isHook": false,
+                    "skipped": false
+                  }
+                ],
+                "suites": [],
+                "passes": [
+                  "46b7efec-2669-4d9a-807d-14bc8b124c7e"
+                ],
+                "failures": [],
+                "pending": [],
+                "skipped": [],
+                "duration": 1,
+                "root": false,
+                "rootEmpty": false,
+                "_timeout": 2000
+              },
+              {
+                "uuid": "74039567-4cfe-4f6b-bf79-c73a47a5293a",
+                "title": "#GetOutput()",
+                "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+                "file": "\\test.js",
+                "beforeHooks": [],
+                "afterHooks": [],
+                "tests": [
+                  {
+                    "title": "get the output",
+                    "fullTitle": "Wordladder #Search(word) #GetOutput() get the output",
+                    "timedOut": false,
+                    "duration": 0,
+                    "state": "passed",
+                    "speed": "fast",
+                    "pass": true,
+                    "fail": false,
+                    "pending": false,
+                    "code": "wd.Output = \"data\";\nwd.SetOutput(\"buff\");\nassert.equal(wd.Output, \"buff\");",
+                    "err": {},
+                    "isRoot": false,
+                    "uuid": "520f9e1e-47ce-47de-a59c-1b49f241c20a",
+                    "isHook": false,
+                    "skipped": false
+                  }
+                ],
+                "suites": [],
+                "passes": [
+                  "520f9e1e-47ce-47de-a59c-1b49f241c20a"
+                ],
+                "failures": [],
+                "pending": [],
+                "skipped": [],
+                "duration": 0,
+                "root": false,
+                "rootEmpty": false,
+                "_timeout": 2000
+              },
+              {
+                "uuid": "711a358c-1020-4d2f-bfcc-9ea933ddda47",
+                "title": "#SetOutput()",
+                "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+                "file": "\\test.js",
+                "beforeHooks": [],
+                "afterHooks": [],
+                "tests": [
+                  {
+                    "title": "getOutput return the input",
+                    "fullTitle": "Wordladder #Search(word) #SetOutput() getOutput return the input",
+                    "timedOut": false,
+                    "duration": 0,
+                    "state": "passed",
+                    "speed": "fast",
+                    "pass": true,
+                    "fail": false,
+                    "pending": false,
+                    "code": "wd.Output = \"data\";\nwd.SetOutput(\"buff\");\nassert.equal(wd.Output, \"buff\");",
+                    "err": {},
+                    "isRoot": false,
+                    "uuid": "f0943341-71ee-4894-853e-9c8d794fb681",
+                    "isHook": false,
+                    "skipped": false
+                  }
+                ],
+                "suites": [],
+                "passes": [
+                  "f0943341-71ee-4894-853e-9c8d794fb681"
+                ],
+                "failures": [],
+                "pending": [],
+                "skipped": [],
+                "duration": 0,
+                "root": false,
+                "rootEmpty": false,
+                "_timeout": 2000
+              },
+              {
+                "uuid": "556e6477-4e34-4f89-a0c6-7bce1b63bd64",
+                "title": "#SetInput()",
+                "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+                "file": "\\test.js",
+                "beforeHooks": [],
+                "afterHooks": [],
+                "tests": [
+                  {
+                    "title": "getInput return the input",
+                    "fullTitle": "Wordladder #Search(word) #SetInput() getInput return the input",
+                    "timedOut": false,
+                    "duration": 0,
+                    "state": "passed",
+                    "speed": "fast",
+                    "pass": true,
+                    "fail": false,
+                    "pending": false,
+                    "code": "wd.Input = \"data\";\nwd.SetInput(\"buff\");\nassert.equal(wd.Input, \"buff\");",
+                    "err": {},
+                    "isRoot": false,
+                    "uuid": "681601d1-fe80-42b7-8a5e-462a0cebcf38",
+                    "isHook": false,
+                    "skipped": false
+                  }
+                ],
+                "suites": [],
+                "passes": [
+                  "681601d1-fe80-42b7-8a5e-462a0cebcf38"
+                ],
+                "failures": [],
+                "pending": [],
+                "skipped": [],
+                "duration": 0,
+                "root": false,
+                "rootEmpty": false,
+                "_timeout": 2000
+              },
+              {
+                "uuid": "78f2d053-aa60-43b1-8fb5-39db2abb8388",
+                "title": "#BFS()",
+                "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+                "file": "\\test.js",
+                "beforeHooks": [],
+                "afterHooks": [],
+                "tests": [
+                  {
+                    "title": "should return ['data', 'dota', 'cota', 'cote', 'code']",
+                    "fullTitle": "Wordladder #Search(word) #BFS() should return ['data', 'dota', 'cota', 'cote', 'code']",
+                    "timedOut": false,
+                    "duration": 3,
+                    "state": "passed",
+                    "speed": "fast",
+                    "pass": true,
+                    "fail": false,
+                    "pending": false,
+                    "code": "wd.SetInput(\"data\");\nwd.SetOutput(\"code\");\nconsole.log(\"here\", wd.BFS());\nassert.includeOrderedMembers(wd.BFS(), [ 'code', 'cote', 'cota', 'dota', 'data' ]);",
+                    "err": {},
+                    "isRoot": false,
+                    "uuid": "4f0e259b-f736-46fe-be98-a8574e35933e",
+                    "isHook": false,
+                    "skipped": false
+                  }
+                ],
+                "suites": [],
+                "passes": [
+                  "4f0e259b-f736-46fe-be98-a8574e35933e"
+                ],
+                "failures": [],
+                "pending": [],
+                "skipped": [],
+                "duration": 3,
+                "root": false,
+                "rootEmpty": false,
+                "_timeout": 2000
+              }
+            ],
+            "passes": [
+              "3a2a2636-1efb-4a27-b107-552da4c0caff"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 1,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      },
+      {
+        "uuid": "f309ddd1-75e2-4740-8f4b-d28bded6b47f",
+        "title": "UI",
+        "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+        "file": "\\test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before each\" hook",
+            "fullTitle": "UI \"before each\" hook",
+            "timedOut": false,
+            "duration": 8,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "// runs before all tests in this block\ndriver = new webdriver.Builder().forBrowser('chrome').build();//启动浏览器",
+            "err": {},
+            "isRoot": false,
+            "uuid": "4f62e07a-3c5f-4e44-9519-28bc9d2bd84a",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after each\" hook",
+            "fullTitle": "UI \"after each\" hook",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "// runs after all tests in this block\ndriver.quit();//关闭浏览器",
+            "err": {},
+            "isRoot": false,
+            "uuid": "3dca9fef-7929-4f64-9679-e76e33272e72",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "valid test",
+            "fullTitle": "UI valid test",
+            "timedOut": false,
+            "duration": 1,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "driver.get(\"./index.html\").then(function() {\n    driver.findElement(By.id(input)).then(function(input){\n        input.sendKeys(\"data\").then(function(){\n            driver.findElement(By.id('output')).then(function(output){\n                output.click().then(function(){\n                    expect(text.getText()).to.equal(\"Looks good!\");\n                    input.click().then(function(){\n                        expect(output.getText()).to.equal(\"Please input a wor\" +\n                            \"d we have or you may input an error word.\");\n                    })\n                })\n            });\n        })\n    });\n})",
+            "err": {},
+            "isRoot": false,
+            "uuid": "5297670f-6e4f-476b-b708-a67ed2365f34",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "5297670f-6e4f-476b-b708-a67ed2365f34"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 1,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      },
+      {
+        "uuid": "0c2979c3-f813-4741-b71b-1f18c32bccd4",
+        "title": "Wordladder BBD",
+        "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+        "file": "\\test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook: Before all tests.",
+            "fullTitle": "Wordladder BBD \"before all\" hook: Before all tests.",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "wd = new Wordladder(\"./test.json\");\nwd.SetInput(\"data\");\nwd.SetOutput(\"code\");",
+            "err": {},
+            "isRoot": false,
+            "uuid": "90a38b2d-c70d-42dd-acc9-7568ea384424",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [],
+        "suites": [
+          {
+            "uuid": "5b2b0cb1-1980-49e4-b6c8-8b2b6bacc78a",
+            "title": "search whether the word is in the dictionary",
+            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "file": "\\test.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "should return true when it has the word.(data is in)",
+                "fullTitle": "Wordladder BBD search whether the word is in the dictionary should return true when it has the word.(data is in)",
+                "timedOut": false,
+                "duration": 0,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "let check = wd.Search(\"data\")\nexpect(check).to.equal(true);",
+                "err": {},
+                "isRoot": false,
+                "uuid": "92169f20-5726-4fcf-a732-7b2082c0edab",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "should return false when it doesn't the word.(mu is not in)",
+                "fullTitle": "Wordladder BBD search whether the word is in the dictionary should return false when it doesn't the word.(mu is not in)",
+                "timedOut": false,
+                "duration": 0,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "let check = wd.Search(\"mu\")\nexpect(check).to.equal(false);",
+                "err": {},
+                "isRoot": false,
+                "uuid": "5570613c-9412-4be3-8218-832b7b988d68",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "92169f20-5726-4fcf-a732-7b2082c0edab",
+              "5570613c-9412-4be3-8218-832b7b988d68"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 0,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          },
+          {
+            "uuid": "5c40da8b-f12c-4833-aeb3-563cd7e19dfc",
+            "title": "the shortest path search",
+            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "file": "\\test.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [
+              {
+                "title": "should return the shortest path to appear in sequence ",
+                "fullTitle": "Wordladder BBD the shortest path search should return the shortest path to appear in sequence ",
+                "timedOut": false,
+                "duration": 0,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "expect(wd.BFS()).to.include.deep.ordered.members([ 'code', 'cote', 'cota', 'dota', 'data' ]);",
+                "err": {},
+                "isRoot": false,
+                "uuid": "271bc84d-17c9-442f-8d94-ca9436143549",
+                "isHook": false,
+                "skipped": false
+              }
+            ],
+            "suites": [],
+            "passes": [
+              "271bc84d-17c9-442f-8d94-ca9436143549"
+            ],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 0,
+            "root": false,
+            "rootEmpty": false,
+            "_timeout": 2000
+          }
+        ],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
     "passes": [],
     "failures": [],
     "pending": [],
     "skipped": [
-      "ae910179-b19e-4190-a565-c6316af79307"
+      "df64eeef-2370-456d-9d0e-1d7b5a25e142"
     ],
     "duration": null,
-    "root": false,
+    "root": true,
     "rootEmpty": false,
     "_timeout": 2000
   },
