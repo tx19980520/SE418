@@ -110,7 +110,7 @@ describe('UI', function() {
 });
 
 
-
+// BDD style Unit Test
 describe('Wordladder BBD', function() {
 	//hooks function, to init the Wordladder
     before( 'Before all tests.', function () {

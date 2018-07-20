@@ -1,48 +1,62 @@
-# WordLadder 网页展示
+# WordLadder 
 
-## 页面展示
+## Display
 
-该网页已上线，直接访问bilibili.cqdulux.cn即可看到效果
+This webpage is online, and you can directly access **bilibili.cqdulux.cn** to see the effect (it is not recommended to start locally). 
 
-## 项目架构
+## Project Architecture 
 
-简要介绍项目中的重要文件
+Briefly introduce the important documents in the project
 
 - app.js
 
-  后端入口，使用Express和WordLadder类实现后端
-  
+  back end entry file, using Express and WordLadder class to achieve the back end 
+
 - test.js
-  
-  用于测试的JS，测试WordLadder类中的各个接口
+
+  test file, test API and page
 
 - wordladder.js
 
-  WordLadder类的实现，字典的读取。
+  the implement of class WordLadder
 
 - dictionary.json
 
-  为方便读取，将原有的txt字典转化为json格式文件
-  
+  the raw dictionary data
+
 - test.json
 
-  用于测试的字典json文件
+  the dictionary data for test
 
 - private.css
 
-  自定义CSS存放
+  Custom CSS storage here
 
 - wordshow.js
 
-  WordLadder页面展示重要组件
+  the important component to show the ladder
 
 - index.html
 
-  主页面，包含ajax和页面动态调整的JS
+  The home page, which contains ajax and JS for page dynamic adjustment 
 
-### 项目特点
+- mochawesome-report
 
-1. 使用Express作后端，前端使用jQuery库，前后端分离
-2. 页面输入值存在validate的行为
-3. ajax使得页面部分刷新
-4. 页面展示效果炫酷
+  store the beautified test report
+
+- coverage
+
+  store the beautified coverage report
+
+## Run Test
+
+- Test correctness, run code `npm test`, then you can check the report at **mochawesome-report**
+- Test coverage，run code`npm coverage`, then you can check the report at **coverage**
+
+PS : E2E test may wrong because the production environment need special settings(web-driver)
+
+## Feature
+
+1. Express is used as the back end, jQuery library is used in the front end, and the back end is separated
+2. It has a validate module at front end
+3. Ajax make the page partial refresh

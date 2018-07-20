@@ -105,27 +105,32 @@ WordLadder.prototype.BFS = function() {
     SearchList.push(init);
     while (SearchList.length !== 0)
     {
+        // get the quque head
         let NowSearch = SearchList.shift();
-        //change letter
+        // change letter
         searched.set(NowSearch.word, NowSearch.past);
         let len = NowSearch.word.length;
         for (let i = 0; i < len; ++i)
         {
+            // traverse the alphabet to modify the word
             for (let letter in alphabet)
             {
-                let copy = new String();
-                copy = copy.concat(NowSearch.word.substring(0,i),alphabet[letter],
+                let NewWord = new String();
+                //  NewWord is the new word coming from the old one(replace one of the letters)
+                NewWord = NewWord.concat(NowSearch.word.substring(0,i),alphabet[letter],
                                                             NowSearch.word.substring(i+1));
-                if (this.Search(copy) && !searched.has(copy))// has the word and hasn't been searched
+                // has the word and hasn't been searched
+                if (this.Search(NewWord) && !searched.has(NewWord))
                 {
-                    SearchList.push({"word":copy, "past":NowSearch.word});
-                    searched.set(copy, NowSearch.word);
-                    if (copy === this.GetOutput())// has get
+                    // new result will enter the queue
+                    SearchList.push({"word":NewWord, "past":NowSearch.word});
+                    searched.set(NewWord, NowSearch.word);
+                    if (NewWord === this.GetOutput())// has get the final Output, then return
                     {
-
                         let result = [];
-                        result.push(copy)
-                        let recursion = searched.get(copy);
+                        result.push(NewWord);
+                        let recursion = searched.get(NewWord);
+                        // empty string means it comes to the Input, recursion is over
                         while(recursion !== "")
                         {
                             result.push(recursion);
@@ -138,8 +143,10 @@ WordLadder.prototype.BFS = function() {
         }
 
     }
+    // if there is no way from Input to Output, return [""]
     return [""];
 }
 
+// export class WordLadder
 module.exports = WordLadder;
 

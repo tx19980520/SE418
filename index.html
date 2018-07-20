@@ -1,71 +1,70 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<!-- CircleLoad -->
-	<script src="jquery.shCircleLoader-min.js"></script>
-	<link rel="stylesheet" href="jquery.shCircleLoader.css">
-	<link rel="stylesheet" href="private.css">
-	<!-- Validator -->
-	<script type="text/javascript" src="validate.min.js"></script>
-	<!-- Word Show -->
-	<script src="wordshow.js"></script>
-    <title>查询系统</title>
-  </head>
-	<body style="background-color: #222222">
-	   <div class="container">
-		  <div class="body-margin">
-				<div class="row justify-content-center mb-4">
-					<div class="input-group col-4">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="inputGroup-sizing-sm">From</span>
-						</div>
-						<input type="text" name="input" class="form-control" id="input" aria-describedby="emailHelp" placeholder="Enter email">
-						<div id="input-valid" class="valid-feedback">
-							Looks good!
-						</div>
-						<div id="input-invalid" class="invalid-feedback">
-							Please input a word we have or you may input an error word.
-						</div>
-					</div>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- CircleLoad -->
+<script src="jquery.shCircleLoader-min.js"></script>
+<link rel="stylesheet" href="jquery.shCircleLoader.css">
+<link rel="stylesheet" href="private.css">
+<!-- Validator -->
+<script type="text/javascript" src="validate.min.js"></script>
+<!-- Word Show -->
+<script src="wordshow.js"></script>
+<title>查询系统</title>
+</head>
+<body style="background-color: #222222">
+<div class="container">
+	<div class="body-margin">
+		<div class="row justify-content-center mb-4">
+			<div class="input-group col-4">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-sm">From</span>
 				</div>
-				<div class="row justify-content-center mb-4">
-					<div class="input-group col-4">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="inputGroup-sizing-default">To</span>
-						</div>
-						<input type="text" name="output" class="form-control" id="output" placeholder="Password">
-						<div id="output-valid" class="valid-feedback">
+				<input type="text" name="input" class="form-control" id="input" aria-describedby="emailHelp" placeholder="Enter email">
+				<div id="input-valid" class="valid-feedback">
 							Looks good!
-						</div>
-						<div id="output-invalid" class="invalid-feedback">
-							Please input a word we have or you may input an error word.
-						</div>
-					</div>
 				</div>
-		</div>
-	 <div class="row justify-content-center">
-		  <button id="submit" type="submit" class="btn btn-light mt-4">Start!</button>
+				<div id="input-invalid" class="invalid-feedback">
+							Please input a word we have or you may input an error word.
+				</div>
 			</div>
-		<div id="loading" class="loading-margin"></div>
-		<div class="text-center mb-3 mt-3 font-fixed" id="display"></div>
-		<div id="ground">
-			<div id="slogan" >The wordLadder is this</div>
+		</div>
+		<div class="row justify-content-center mb-4">
+			<div class="input-group col-4">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">To</span>
+				</div>
+				<input type="text" name="output" class="form-control" id="output" placeholder="Password">
+				<div id="output-valid" class="valid-feedback">
+							Looks good!
+				</div>
+				<div id="output-invalid" class="invalid-feedback">
+							Please input a word we have or you may input an error word.
+				</div>
+			</div>
 		</div>
 	</div>
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<div class="row justify-content-center">
+		<button id="submit" type="submit" class="btn btn-light mt-4">Start!</button>
+	</div>
+	<div id="loading" class="loading-margin">
+	</div>
+	<div class="text-center mb-3 mt-3 font-fixed" id="display">
+	</div>
+	<div id="ground">
+		<div id="slogan">
+			The wordLadder is this
+		</div>
+	</div>
+</div>
+<!-- Optional JavaScript --><!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script>
 	$(function(){
 	$('#loading').shCircleLoader({
@@ -101,7 +100,6 @@
 			}
 		})
 	});
-	
 	$("#output").blur(function(){
 		let input = $('#output').val();
 		var settings = {
@@ -130,8 +128,6 @@
 			}
 		})
 	});
-	
-	
 	$('#loading').hide();
 	$("#submit").click(function(){
 			$("#ground").empty();
@@ -188,7 +184,6 @@
 						$('#output-valid').hide();
 						return;
 					}
-						
 					var settings = {
 						"async": true,
 						"crossDomain": true,
@@ -203,8 +198,6 @@
 							"output": $("#output").val()
 						}
 					}
-						
-						
 					let ajax = $.ajax(settings);
 					$('#loading').show();
 					ajax.done(function (response) {
@@ -222,11 +215,10 @@
 						}
 						$("#display").html(result);
 					});
-						
 				})
 			})
 		})
 	})
 	</script>
-	</body>
+</body>
 </html>
