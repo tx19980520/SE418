@@ -67,11 +67,15 @@
 <!-- Optional JavaScript --><!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script>
 	$(function(){
+	
+	// loading circle mount
 	$('#loading').shCircleLoader({
     namespace: "myns",
     color: "transparent",
     dotsRadius: 15
 });
+	$('#loading').hide();
+	// remote end validate
 	$("#input").blur(function(){
 		let input = $('#input').val();
 		var settings = {
@@ -85,6 +89,7 @@
 		}
 		let ajax = $.ajax(settings)
 		ajax.done(function(response){
+		// friendly show the result of validation
 			if(response.has)
 			{
 				$('#input').addClass("is-valid");
@@ -100,6 +105,7 @@
 			}
 		})
 	});
+	// remote end validate
 	$("#output").blur(function(){
 		let input = $('#output').val();
 		var settings = {
@@ -113,6 +119,7 @@
 		}
 		let ajax = $.ajax(settings)
 		ajax.done(function(response){
+		// friendly show the result of validation
 			if(response.has)
 			{
 				$('#output').addClass("is-valid");
@@ -128,10 +135,12 @@
 			}
 		})
 	});
-	$('#loading').hide();
+	
+	// submit the input and output by POST
 	$("#submit").click(function(){
 			$("#ground").empty();
 			$("#display").html("");
+			// need check the two words in the dictionary first
 			let input = $('#input').val();
 			var settings_in = {
 				"async": true,
@@ -198,6 +207,7 @@
 							"output": $("#output").val()
 						}
 					}
+					// post ajax
 					let ajax = $.ajax(settings);
 					$('#loading').show();
 					ajax.done(function (response) {
@@ -208,6 +218,7 @@
 						})
 						$('#loading').hide();
 						let result = new String();
+						// show the result in the page
 						result = result.concat(response.result.shift());
 						while(response.result.length !== 0)
 						{
