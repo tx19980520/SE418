@@ -1,13 +1,24 @@
 var fs = require('fs');
 /*
-Class: Wordladder
+class: Wordladder
 Implement the function of finding the shortest path in the dictionary
+ */
+
+/*
+function: InitDict
+parameter: dictPath the path of the json file you want to use as dictionary
+Init the dictionary of a Wordladder
  */
 function InitDict(dictPath){
     var data=fs.readFileSync(dictPath,'utf-8');
     return JSON.parse(data);
 }
 
+/*
+function: InitDict
+parameter: dictPath the path of the json file you want to use as dictionary
+Init the dictionary of a Wordladder
+ */
 function WordLadder(path)
 {
     this.dict = null;
