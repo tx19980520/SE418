@@ -15,9 +15,9 @@ function InitDict(dictPath){
 }
 
 /*
-function: InitDict
+function: WordLadder
 parameter: dictPath the path of the json file you want to use as dictionary
-Init the dictionary of a Wordladder
+Init Wordladder
  */
 function WordLadder(path)
 {
@@ -26,28 +26,59 @@ function WordLadder(path)
     this.Output = null;
     this._init(path);
 }
+
+/*
+function: _init
+parameter: dictPath the path of the json file you want to use as dictionary
+Encapsulate the InitDict function
+ */
 WordLadder.prototype._init = function(path) {
     this.Input = "";
     this.Output = "";
     this.dict = InitDict(path);
 }
 
+/*
+function: SetInput
+parameter: the word user inputs
+set the Input
+ */
 WordLadder.prototype.SetInput = function(input) {
     this.Input = input;
 }
 
+/*
+function: SetOutput
+parameter: the word user wants to output
+set the Output
+ */
 WordLadder.prototype.SetOutput = function(output) {
     this.Output = output;
 }
 
+/*
+function: GetInput
+parameter:
+return  the Input
+ */
 WordLadder.prototype.GetInput = function() {
     return this.Input;
 }
 
+/*
+function: GetOutput
+parameter:
+get the output
+ */
 WordLadder.prototype.GetOutput = function() {
     return this.Output;
 }
 
+/*
+function: Search
+parameter: the word user input
+search the word user inputs in the dictionary we set, return whether the word is in the dictionary
+ */
 WordLadder.prototype.Search = function(word) {
     let len = this.dict.length;
     for (let i = 0; i < len; ++i)
@@ -61,6 +92,11 @@ WordLadder.prototype.Search = function(word) {
     return false;
 }
 
+/*
+function: BFS
+parameter: the word user input
+search the word user inputs in the dictionary we set, return whether the word is in the dictionary
+ */
 WordLadder.prototype.BFS = function() {
     let alphabet ="abcdefghijklmnopqrstuvwxyz";
     let SearchList = [];
