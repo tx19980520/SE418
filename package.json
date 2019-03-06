@@ -24,7 +24,7 @@
     "fs": "0.0.1-security",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
-    "mochawesome": "^3.0.2",
+    "mochawesome": "^3.1.1",
     "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }

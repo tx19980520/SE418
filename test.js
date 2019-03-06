@@ -87,7 +87,7 @@ suite('Wordladder', function() {
 describe('UI', function() {
     it("valid test", function() {
         driver = new webdriver.Builder().forBrowser('chrome').build();//start chrome
-        driver.get("http://bilibili.cqdulux.cn").then(function() {// to simplify, we choose to test the page at server not in the development environment
+        driver.get("http://127.0.0.1:8081").then(function() {// to simplify, we choose to test the page at server not in the development environment
             driver.findElement(By.id('input')).then(function(input){// get the input
                 input.sendKeys("data").then(function(){// set the Input value to data
                     driver.findElement(By.id('output')).then(function(output){// get the output

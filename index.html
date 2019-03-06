@@ -25,9 +25,9 @@
 		<div class="row justify-content-center mb-4">
 			<div class="input-group col-4">
 				<div class="input-group-prepend">
-					<span class="input-group-text" id="inputGroup-sizing-sm">From</span>
+					<span class="input-group-text" id="inputGroup-sizing-sm">To</span>
 				</div>
-				<input type="text" name="input" class="form-control" id="input" aria-describedby="emailHelp" placeholder="Enter email">
+				<input type="text" name="input" class="form-control" id="input" aria-describedby="emailHelp" placeholder="Input end word">
 				<div id="input-valid" class="valid-feedback">
 							Looks good!
 				</div>
@@ -39,9 +39,9 @@
 		<div class="row justify-content-center mb-4">
 			<div class="input-group col-4">
 				<div class="input-group-prepend">
-					<span class="input-group-text" id="inputGroup-sizing-default">To</span>
+					<span class="input-group-text" id="inputGroup-sizing-default">From</span>
 				</div>
-				<input type="text" name="output" class="form-control" id="output" placeholder="Password">
+				<input type="text" name="output" class="form-control" id="output" placeholder="Input start word">
 				<div id="output-valid" class="valid-feedback">
 							Looks good!
 				</div>
@@ -81,7 +81,7 @@
 		var settings = {
 				  "async": true,
 				  "crossDomain": true,
-				  "url": `http://106.15.225.249:3000/wordladder/search?word=${input}`,
+				  "url": `http://localhost:8080/search?word=${input}`,
 				  "method": "GET",
 				  "headers": {
 					"Content-Type": "application/json;charset=utf-8",
@@ -111,7 +111,7 @@
 		var settings = {
 				  "async": true,
 				  "crossDomain": true,
-				  "url": `http://106.15.225.249:3000/wordladder/search?word=${input}`,
+				  "url": `http://localhost:8080/search?word=${input}`,
 				  "method": "GET",
 				  "headers": {
 					"Content-Type": "application/json;charset=utf-8",
@@ -145,7 +145,7 @@
 			var settings_in = {
 				"async": true,
 				"crossDomain": true,
-				"url": `http://106.15.225.249:3000/wordladder/search?word=${input}`,
+				"url": `http://localhost:8080/search?word=${input}`,
 				"method": "GET",
 				"headers": {
 					"Content-Type": "application/json;charset=utf-8",
@@ -171,7 +171,7 @@
 				var settings_out = {
 					"async": true,
 					"crossDomain": true,
-					"url": `http://106.15.225.249:3000/wordladder/search?word=${input}`,
+					"url": `http://localhost:8080/search?word=${input}`,
 					"method": "GET",
 					"headers": {
 						"Content-Type": "application/json;charset=utf-8",
@@ -196,25 +196,25 @@
 					var settings = {
 						"async": true,
 						"crossDomain": true,
-						"url": "http://106.15.225.249:3000/wordladder/BFS",
+						"url": "http://localhost:8080/BFS",
 						"method": "POST",
 						"headers": {
 							"Content-Type": "application/json;charset=utf-8",
-							"Content-Type": "application/x-www-form-urlencoded",
 						},
-						"data": {
+						"data": JSON.stringify({
 							"input": $("#input").val(),
 							"output": $("#output").val()
-						}
+						})
 					}
 					// post ajax
 					let ajax = $.ajax(settings);
 					$('#loading').show();
 					ajax.done(function (response) {
 						$('#ground').append('<div id="slogan" >The wordLadder is this</div>')
+						console.log(response)
 						$('#slogan').typer({
 							search: 'this',
-							replace: response.result.concat().reverse()
+							replace: response.concat().reverse()
 						})
 						$('#loading').hide();
 						let result = new String();

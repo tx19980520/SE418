@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 11,
-    "tests": 10,
-    "passes": 10,
+    "tests": 11,
+    "passes": 11,
     "pending": 0,
     "failures": 0,
-    "start": "2018-07-20T11:30:07.185Z",
-    "end": "2018-07-20T11:30:07.243Z",
-    "duration": 58,
-    "testsRegistered": 11,
-    "passPercent": 90.9,
+    "start": "2019-03-06T17:15:28.615Z",
+    "end": "2019-03-06T17:15:28.655Z",
+    "duration": 40,
+    "testsRegistered": 12,
+    "passPercent": 91.7,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "d13ccc0b-b024-4942-a0ab-974414f6b542",
+    "uuid": "da1a7228-ddb1-417f-91e7-b3b64c7a4476",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -37,30 +37,30 @@
         "code": "let check = wd.Search(\"mu\")\nassert.equal(check, false);",
         "err": {},
         "isRoot": true,
-        "uuid": "5acf53cb-9a0c-46bb-a964-c6350810aa22",
+        "uuid": "82ffc9a8-c350-4e61-a60d-3ba541ec99a2",
         "isHook": false,
         "skipped": true
       }
     ],
     "suites": [
       {
-        "uuid": "308cfc44-30d2-4d03-ba68-2b68257446fd",
+        "uuid": "ea03cc85-2ec1-4bbf-bb50-b4b9eb6bfcce",
         "title": "Wordladder",
-        "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+        "fullFile": "D:\\java_web\\Wordladder\\test.js",
         "file": "\\test.js",
         "beforeHooks": [
           {
             "title": "\"before each\" hook",
             "fullTitle": "Wordladder \"before each\" hook",
             "timedOut": false,
-            "duration": 1,
+            "duration": 0,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "let wd = new Wordladder(\"./test.json\");",
             "err": {},
             "isRoot": false,
-            "uuid": "b20be62b-4e8f-40e9-8e7a-1b959a6e8d72",
+            "uuid": "7fd0d615-a76f-4e1f-922a-12c3257bd18a",
             "isHook": true,
             "skipped": false
           }
@@ -69,9 +69,9 @@
         "tests": [],
         "suites": [
           {
-            "uuid": "8da6284e-9bb2-471f-9fc1-4b4a799487eb",
+            "uuid": "45d41b86-64cd-46b4-9b9d-4b9092e7d41e",
             "title": "#Search(word)",
-            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "fullFile": "D:\\java_web\\Wordladder\\test.js",
             "file": "\\test.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -89,14 +89,14 @@
                 "code": "let check = wd.Search(\"data\")\nassert.equal(check, true);\ntest(\"should return false when it doesn't the word.\", function () {\n    let check = wd.Search(\"mu\")\n    assert.equal(check, false);\n});",
                 "err": {},
                 "isRoot": false,
-                "uuid": "c523e5b0-2378-41f1-975d-ad1322a90639",
+                "uuid": "e3e064d1-a7d3-4d3d-ad4f-e03a5b199049",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "c523e5b0-2378-41f1-975d-ad1322a90639"
+              "e3e064d1-a7d3-4d3d-ad4f-e03a5b199049"
             ],
             "failures": [],
             "pending": [],
@@ -107,9 +107,9 @@
             "_timeout": 2000
           },
           {
-            "uuid": "387de949-aa11-4db4-bfc7-e039e551cb81",
+            "uuid": "85fa2b1a-913a-45dc-82e1-6992de359027",
             "title": "#GetInput()",
-            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "fullFile": "D:\\java_web\\Wordladder\\test.js",
             "file": "\\test.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -127,14 +127,14 @@
                 "code": "wd.Input = \"data\";// setTheInput\nlet input = wd.GetInput();\nassert.equal(input, \"data\", \"==\");",
                 "err": {},
                 "isRoot": false,
-                "uuid": "ea36a6b5-7645-46fa-8584-a79462fa4a36",
+                "uuid": "7a4b2bfd-db0a-4429-a802-204cbd89341a",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "ea36a6b5-7645-46fa-8584-a79462fa4a36"
+              "7a4b2bfd-db0a-4429-a802-204cbd89341a"
             ],
             "failures": [],
             "pending": [],
@@ -145,9 +145,9 @@
             "_timeout": 2000
           },
           {
-            "uuid": "ed18a2ce-b826-44a9-94c4-800f96f3e5db",
+            "uuid": "a11ab290-e3d3-4a5e-80bc-a6430129814a",
             "title": "#GetOutput()",
-            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "fullFile": "D:\\java_web\\Wordladder\\test.js",
             "file": "\\test.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -165,14 +165,14 @@
                 "code": "wd.Output = \"data\";\nassert.equal(wd.GetOutput(), \"data\");",
                 "err": {},
                 "isRoot": false,
-                "uuid": "963f52ce-795b-4d62-9b5c-bad7b8be253f",
+                "uuid": "ff4df94c-56f2-4761-a4c2-b85329ee8be5",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "963f52ce-795b-4d62-9b5c-bad7b8be253f"
+              "ff4df94c-56f2-4761-a4c2-b85329ee8be5"
             ],
             "failures": [],
             "pending": [],
@@ -183,9 +183,9 @@
             "_timeout": 2000
           },
           {
-            "uuid": "45da16da-e273-42b6-b4e2-b081adfeddb1",
+            "uuid": "7e27f3b5-8d29-44d2-8833-974ea2e74143",
             "title": "#SetOutput()",
-            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "fullFile": "D:\\java_web\\Wordladder\\test.js",
             "file": "\\test.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -194,7 +194,7 @@
                 "title": "getOutput return the input",
                 "fullTitle": "Wordladder #SetOutput() getOutput return the input",
                 "timedOut": false,
-                "duration": 1,
+                "duration": 0,
                 "state": "passed",
                 "speed": "fast",
                 "pass": true,
@@ -203,27 +203,27 @@
                 "code": "wd.Output = \"data\";// wrong output set\nwd.SetOutput(\"buff\");// right output set\nassert.equal(wd.Output, \"buff\");",
                 "err": {},
                 "isRoot": false,
-                "uuid": "37cbb1e0-81e1-469c-b374-5f5b732476c5",
+                "uuid": "9aeb62d8-0f23-4015-8f90-032867595ff4",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "37cbb1e0-81e1-469c-b374-5f5b732476c5"
+              "9aeb62d8-0f23-4015-8f90-032867595ff4"
             ],
             "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 1,
+            "duration": 0,
             "root": false,
             "rootEmpty": false,
             "_timeout": 2000
           },
           {
-            "uuid": "64e618a5-b515-4eca-9ec1-121302aa9556",
+            "uuid": "ff300ef7-4f2e-4131-b1c3-3be9a3e49490",
             "title": "#SetInput()",
-            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "fullFile": "D:\\java_web\\Wordladder\\test.js",
             "file": "\\test.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -241,14 +241,14 @@
                 "code": "wd.Input = \"data\";// raw set the wrong input\nwd.SetInput(\"buff\");// set the right input\nassert.equal(wd.Input, \"buff\");",
                 "err": {},
                 "isRoot": false,
-                "uuid": "eb4f0979-939c-4fb1-83e5-b86d1c4f2911",
+                "uuid": "a772fccd-9236-481e-b842-f2cc2299597d",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "eb4f0979-939c-4fb1-83e5-b86d1c4f2911"
+              "a772fccd-9236-481e-b842-f2cc2299597d"
             ],
             "failures": [],
             "pending": [],
@@ -259,9 +259,9 @@
             "_timeout": 2000
           },
           {
-            "uuid": "f6cbcd3d-6a92-43cc-8851-26bd887a6c8f",
+            "uuid": "7250f098-4e0a-4e9f-b1b9-238860b3a89a",
             "title": "#BFS()",
-            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "fullFile": "D:\\java_web\\Wordladder\\test.js",
             "file": "\\test.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -270,7 +270,7 @@
                 "title": "should return ['data', 'dota', 'cota', 'cote', 'code']",
                 "fullTitle": "Wordladder #BFS() should return ['data', 'dota', 'cota', 'cote', 'code']",
                 "timedOut": false,
-                "duration": 4,
+                "duration": 2,
                 "state": "passed",
                 "speed": "fast",
                 "pass": true,
@@ -279,19 +279,37 @@
                 "code": "wd.SetInput(\"data\");\nwd.SetOutput(\"code\");\nassert.includeOrderedMembers(wd.BFS(), [ 'code', 'cote', 'cota', 'dota', 'data' ]);",
                 "err": {},
                 "isRoot": false,
-                "uuid": "dc57d428-62ef-42ff-8421-3aa3b7a8d367",
+                "uuid": "0d74dc7e-bd5f-42f4-93a1-422f41878a49",
+                "isHook": false,
+                "skipped": false
+              },
+              {
+                "title": "should return [''] if we don't have the path",
+                "fullTitle": "Wordladder #BFS() should return [''] if we don't have the path",
+                "timedOut": false,
+                "duration": 0,
+                "state": "passed",
+                "speed": "fast",
+                "pass": true,
+                "fail": false,
+                "pending": false,
+                "code": "// set two wrong words\nwd.SetInput(\"fu\");\nwd.SetOutput(\"mu\");\nassert.includeOrderedMembers(wd.BFS(), ['']);",
+                "err": {},
+                "isRoot": false,
+                "uuid": "04f1ec92-ce1a-4fb2-8a5e-e077d215c063",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "dc57d428-62ef-42ff-8421-3aa3b7a8d367"
+              "0d74dc7e-bd5f-42f4-93a1-422f41878a49",
+              "04f1ec92-ce1a-4fb2-8a5e-e077d215c063"
             ],
             "failures": [],
             "pending": [],
             "skipped": [],
-            "duration": 4,
+            "duration": 2,
             "root": false,
             "rootEmpty": false,
             "_timeout": 2000
@@ -307,9 +325,9 @@
         "_timeout": 2000
       },
       {
-        "uuid": "7cc4f510-caf1-46f6-b761-041d9d2bf2a8",
+        "uuid": "26b729fa-0993-4289-9c1b-cb32469e213d",
         "title": "UI",
-        "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+        "fullFile": "D:\\java_web\\Wordladder\\test.js",
         "file": "\\test.js",
         "beforeHooks": [],
         "afterHooks": [],
@@ -318,50 +336,50 @@
             "title": "valid test",
             "fullTitle": "UI valid test",
             "timedOut": false,
-            "duration": 16,
+            "duration": 7,
             "state": "passed",
             "speed": "fast",
             "pass": true,
             "fail": false,
             "pending": false,
-            "code": "driver = new webdriver.Builder().forBrowser('chrome').build();//start chrome\ndriver.get(\"http://bilibili.cqdulux.cn\").then(function() {// to simplify, we choose to test the page at server not in the development environment\n    driver.findElement(By.id('input')).then(function(input){// get the input\n        input.sendKeys(\"data\").then(function(){// set the Input value to data\n            driver.findElement(By.id('output')).then(function(output){// get the output\n                output.click().then(function(){// click output to trigger word detection\n                    driver.findElement(By.id(\"input-valid\")).then(function(inputValid){\n                        inputValid.getAttribute('class').then(function(ClassName){\n                            expect(ClassName).to.equal(\"valid-feedback\");\n                            inputValid.getText().then(function(text){\n                                expect(text).to.equal(\"Looks good!\");\n                                driver.quit();\n                            })\n                        })\n                    })\n                })\n            });\n        })\n    });\n})",
+            "code": "driver = new webdriver.Builder().forBrowser('chrome').build();//start chrome\ndriver.get(\"http://127.0.0.1:8081\").then(function() {// to simplify, we choose to test the page at server not in the development environment\n    driver.findElement(By.id('input')).then(function(input){// get the input\n        input.sendKeys(\"data\").then(function(){// set the Input value to data\n            driver.findElement(By.id('output')).then(function(output){// get the output\n                output.click().then(function(){// click output to trigger word detection\n                    driver.findElement(By.id(\"input-valid\")).then(function(inputValid){\n                        inputValid.getAttribute('class').then(function(ClassName){\n                            expect(ClassName).to.equal(\"valid-feedback\");\n                            inputValid.getText().then(function(text){\n                                expect(text).to.equal(\"Looks good!\");\n                                driver.quit();\n                            })\n                        })\n                    })\n                })\n            });\n        })\n    });\n})",
             "err": {},
             "isRoot": false,
-            "uuid": "8b35ab1e-e716-4551-838d-941e936f997b",
+            "uuid": "f3cbf31c-9f38-405d-9069-24c2bb5969e2",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "8b35ab1e-e716-4551-838d-941e936f997b"
+          "f3cbf31c-9f38-405d-9069-24c2bb5969e2"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 16,
+        "duration": 7,
         "root": false,
         "rootEmpty": false,
         "_timeout": 2000
       },
       {
-        "uuid": "44e71522-b297-4e38-9877-b15bd4d0e68a",
+        "uuid": "16340b63-7f25-4408-82bb-16db80e57955",
         "title": "Wordladder BBD",
-        "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+        "fullFile": "D:\\java_web\\Wordladder\\test.js",
         "file": "\\test.js",
         "beforeHooks": [
           {
             "title": "\"before all\" hook: Before all tests.",
             "fullTitle": "Wordladder BBD \"before all\" hook: Before all tests.",
             "timedOut": false,
-            "duration": 1,
+            "duration": 0,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "wd = new Wordladder(\"./test.json\");\nwd.SetInput(\"data\");\nwd.SetOutput(\"code\");",
             "err": {},
             "isRoot": false,
-            "uuid": "43d7d572-8919-46e6-9cf8-2937c11783ec",
+            "uuid": "bb443c38-5700-41e4-b75b-fb5199fb277b",
             "isHook": true,
             "skipped": false
           }
@@ -370,9 +388,9 @@
         "tests": [],
         "suites": [
           {
-            "uuid": "de721913-53ea-40db-97b0-519ee5dd1e8c",
+            "uuid": "13ff0259-76ea-473c-9202-69db3d74eefd",
             "title": "search whether the word is in the dictionary",
-            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "fullFile": "D:\\java_web\\Wordladder\\test.js",
             "file": "\\test.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -390,7 +408,7 @@
                 "code": "let check = wd.Search(\"data\")\nexpect(check).to.equal(true);",
                 "err": {},
                 "isRoot": false,
-                "uuid": "88098a20-4ba7-43c3-acc0-e72cbcd7062b",
+                "uuid": "d5c2ef5b-62d7-48b6-89bd-4afd47a61a7d",
                 "isHook": false,
                 "skipped": false
               },
@@ -407,15 +425,15 @@
                 "code": "let check = wd.Search(\"mu\")\nexpect(check).to.equal(false);",
                 "err": {},
                 "isRoot": false,
-                "uuid": "df0e664f-0b0d-4cb0-8a80-65a49285135b",
+                "uuid": "dee17cc3-0480-4c71-b43a-81d374396384",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "88098a20-4ba7-43c3-acc0-e72cbcd7062b",
-              "df0e664f-0b0d-4cb0-8a80-65a49285135b"
+              "d5c2ef5b-62d7-48b6-89bd-4afd47a61a7d",
+              "dee17cc3-0480-4c71-b43a-81d374396384"
             ],
             "failures": [],
             "pending": [],
@@ -426,9 +444,9 @@
             "_timeout": 2000
           },
           {
-            "uuid": "0e7f82cf-c0a6-4f56-b645-9faeb733c3c9",
+            "uuid": "91fa9344-7c0a-4001-8cf4-2937ab03cc9c",
             "title": "the shortest path search",
-            "fullFile": "C:\\Users\\ty020\\Desktop\\RR\\projects\\Wordladder\\test.js",
+            "fullFile": "D:\\java_web\\Wordladder\\test.js",
             "file": "\\test.js",
             "beforeHooks": [],
             "afterHooks": [],
@@ -446,14 +464,14 @@
                 "code": "expect(wd.BFS()).to.include.deep.ordered.members([ 'code', 'cote', 'cota', 'dota', 'data' ]);",
                 "err": {},
                 "isRoot": false,
-                "uuid": "8d71937d-5512-4c73-810f-f7b18a353afc",
+                "uuid": "c3356032-ef3e-48d2-ab02-708c077d3f39",
                 "isHook": false,
                 "skipped": false
               }
             ],
             "suites": [],
             "passes": [
-              "8d71937d-5512-4c73-810f-f7b18a353afc"
+              "c3356032-ef3e-48d2-ab02-708c077d3f39"
             ],
             "failures": [],
             "pending": [],
@@ -478,12 +496,12 @@
     "failures": [],
     "pending": [],
     "skipped": [
-      "5acf53cb-9a0c-46bb-a964-c6350810aa22"
+      "82ffc9a8-c350-4e61-a60d-3ba541ec99a2"
     ],
     "duration": null,
     "root": true,
     "rootEmpty": false,
     "_timeout": 2000
   },
-  "copyrightYear": 2018
+  "copyrightYear": 2019
 }

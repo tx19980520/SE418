@@ -1,8 +1,12 @@
+---
+typora-root-url: ./
+---
+
 # WordLadder 
 
 ## Display
 
-This webpage is online, and you can directly access **bilibili.cqdulux.cn** to see the effect (it is not recommended to start locally). 
+First, you need to `http-server` for front-end, then you should `cd backend &&mvn spring-boot:run`
 
 ## Project Architecture 
 
@@ -60,3 +64,9 @@ PS : E2E test may wrong because the production environment need special settings
 1. Express is used as the back end, jQuery library is used in the front end, and the back end is separated
 2. It has a validate module at front end
 3. Ajax make the page partial refresh
+
+## New backend implemented by Spring Boot
+
+the SpringBoot Backend is in the path of the backend, the front-end just has tiny modify
+
+![word](/word.gif)
