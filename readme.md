@@ -81,4 +81,4 @@ WordLadder uses Junit to test the back-end project, which has a two-level test p
 
 the backend test file is in backend/src/test
 
-![test_post](.\test_post.png)
+![test_post](./test_post.png)
