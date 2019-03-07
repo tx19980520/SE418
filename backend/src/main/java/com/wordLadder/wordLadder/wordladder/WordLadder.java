@@ -49,6 +49,10 @@ public class WordLadder {
         int s_idx = this.dict.indexOf(start_word);
         ArrayList<String> result_string = new ArrayList<>();
         ArrayList<Integer>result = this.search(s_idx, end_word);
+        if(result == null)
+        {
+            return null;
+        }
         for(int i = 0; i < result.size(); ++i)
         {
             result_string.add(this.dict.get(result.get(i)));

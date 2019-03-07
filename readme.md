@@ -1,7 +1,3 @@
----
-typora-root-url: ./
----
-
 # WordLadder 
 
 ## Display
@@ -70,3 +66,19 @@ PS : E2E test may wrong because the production environment need special settings
 the SpringBoot Backend is in the path of the backend, the front-end just has tiny modify
 
 ![word](/word.gif)
+
+## About Junit
+
+WordLadder uses Junit to test the back-end project, which has a two-level test plan:
+
+1. web level
+
+   the purpose of web-level test is to check whether http requests are right and the CORS problem has been solved.
+
+2. wordladder level
+
+   Make sure the application(word ladder kernel) is correct.
+
+the backend test file is in backend/src/test
+
+![test_post](.\test_post.png)
