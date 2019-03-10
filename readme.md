@@ -1,8 +1,19 @@
 # WordLadder 
 
+> name 谭骁
+>
+> ID 516110910019
+
 ## Display
 
-First, you need to `http-server` for front-end, then you should `cd backend &&mvn spring-boot:run`
+```bash
+# start front-end
+npm install 
+http-server
+# start spring back-end
+cd backend
+mvn spring-boot:run
+```
 
 ## Project Architecture 
 
@@ -48,6 +59,10 @@ Briefly introduce the important documents in the project
 
   store the beautified coverage report
 
+- backend
+
+  Spring Boot back-end
+
 ## Run Test
 
 - Test correctness, run code `npm test`, then you can check the report at **mochawesome-report**
@@ -63,7 +78,7 @@ PS : E2E test may wrong because the production environment need special settings
 
 ## New backend implemented by Spring Boot
 
-the SpringBoot Backend is in the path of the backend, the front-end just has tiny modify
+the Spring Boot Backend is in the path of the backend, the front-end just has tiny modify.
 
 ![word](/word.gif)
 
@@ -82,3 +97,8 @@ WordLadder uses Junit to test the back-end project, which has a two-level test p
 the backend test file is in backend/src/test
 
 ![test_post](./test_post.png)
+
+```bash
+# run test
+.\mvnw clean test
+```
