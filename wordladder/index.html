@@ -219,10 +219,10 @@
 						$('#loading').hide();
 						let result = new String();
 						// show the result in the page
-						result = result.concat(response.result.shift());
-						while(response.result.length !== 0)
+						result = result.concat(response.shift());
+						while(response.length !== 0)
 						{
-							result = result.concat("->",response.result.shift());
+							result = result.concat("->",response.shift());
 						}
 						$("#display").html(result);
 					});

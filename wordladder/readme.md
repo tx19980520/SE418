@@ -6,13 +6,15 @@
 
 ## Display
 
+一定要先开后端，因为前端默认也是8080端口
+
 ```bash
-# start front-end
-npm install 
-http-server
 # start spring back-end
 cd backend
 mvn spring-boot:run
+# start front-end
+npm install 
+http-server
 ```
 
 ## Project Architecture 
