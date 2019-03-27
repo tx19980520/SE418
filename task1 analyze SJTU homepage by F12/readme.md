@@ -10,7 +10,7 @@
 
 performance用于从多个方面来对面的性能进行监控，对开发者而言，主要的目的是为了找到性能的瓶颈，在此我们关注的是SJTU homepage在加载完成时的性能检测和分析。
 
-![performance-summary](.\imgs\performance-summary.png)
+![performance-summary](/imgs/performance-summary.png)
 
 从上到下我们依次进行分析
 
@@ -52,19 +52,19 @@ Othering： 其他资源的加载。
 
 根据事件耗时长短，反向列出事件列表，有分类可选(通过类型、域、子域、URL分类列出)。
 
-![bottom-up](.\imgs\bottom-up.png)
+![bottom-up](/imgs/bottom-up.png)
 
 #### call tree
 
 进一步细化，讲时间的消耗进一步分摊到文件和函数上，便于进一步分析瓶颈。
 
-![call-tree](.\imgs\call-tree.png)
+![call-tree](/imgs/call-tree.png)
 
 不难发现出去函数调用的相关开销，最大的开销是在我们自己的写的脚本中的第893行
 
-![init](.\imgs\init.png)
+![init](/imgs/init.png)
 
-这一行是开发者自己写在/resource/assets/js/main.js的一个初始化函数。![mainjs](.\imgs\mainjs.png)
+这一行是开发者自己写在/resource/assets/js/main.js的一个初始化函数。![mainjs](/imgs/mainjs.png)
 
 不难看出这个页面里面还有中文注释带来的乱码，以及一些php的痕迹。
 
@@ -72,25 +72,25 @@ Othering： 其他资源的加载。
 
 按时间倒叙对页面中发生的事件进行记录
 
-![eventlog](.\imgs\eventlog.png)
+![eventlog](/imgs/eventlog.png)
 
 ## Elements
 
 Elements实质上是在展示生成的DOM主要关切的是样式和绑定的事件，我们这里主要讨论的是动画。
 
-![style+event](.\imgs\style+event.png)
+![style+event](/imgs/style+event.png)
 
 我们在这个地方说名一下一些相关动画的实现，部分是js的部分是css的。
 
-![anime](.\imgs\anime.gif)
+![anime](/imgs/anime.gif)
 
-![hover event](.\imgs\hover event.png)
+![hover event](/imgs/hover event.png)
 
 我在event listener中寻找了很久的该项动画，将所有的动作都删除了均无效果，最终寻找几个可能的css(style.css)
 
 发现了该段代码
 
-![mousevoer](.\imgs\mousevoer.png)
+![mousevoer](/imgs/mousevoer.png)
 
 我们会发现对于轮播盘，将鼠标移动至其上方是通过jquery来实现的。
 
@@ -100,11 +100,11 @@ Elements实质上是在展示生成的DOM主要关切的是样式和绑定的事
 
 对于页面中使用到的资源进行树形展示，我们可以非常简单明了的发现这个网页的实现并没有使用前端框架，有概率是使用了某种语言的模板引擎。
 
-![resource](.\imgs\resource.png)
+![resource](/imgs/resource.png)
 
 典型的vue框架的Sources如下：
 
-![vue-source](.\imgs\vue-source.png)
+![vue-source](/imgs/vue-source.png)
 
 非常明显的能看出SJTU homepage没有使用webpack或其他打包工具对css和js进行压缩打包。
 
@@ -116,17 +116,17 @@ Elements实质上是在展示生成的DOM主要关切的是样式和绑定的事
 
 为了分析性能，我们勾选了Disable cache。
 
-![network](.\imgs\network.png)
+![network](/imgs/network.png)
 
-我们能看到我们最终拿到了哪些文件和多媒体文件，这里我们主要关注的是XHR和Img，这事整个首页最重要的两个部分。![header](.\imgs\header.png)
+我们能看到我们最终拿到了哪些文件和多媒体文件，这里我们主要关注的是XHR和Img，这事整个首页最重要的两个部分。![header](/imgs/header.png)
 
-![preview](.\imgs\preview.png)
+![preview](/imgs/preview.png)
 
 我们发现这个对应页面中的学术日历，这个返回的数据结构中存在着中文拼音缩写，晦涩难懂。
 
 我们发现请求头中并不存在csrf-token，无法防御csrf攻击
 
-![image-load](.\imgs\image-load.png)
+![image-load](/imgs/image-load.png)
 
 图片整体的加载速度较快，没有明显的卡顿，但没有实现图片的lazy-load，可能主要是归功于服务器带宽高，根本不存在相应的加载问题。
 
@@ -140,7 +140,7 @@ Elements实质上是在展示生成的DOM主要关切的是样式和绑定的事
 
 ## Security
 
-www.sjtu.edu.cn是上海交大官方网站中率先使用https的网站，这一点希望其他学院向网络信息中心寻求帮助进行反向代理。![CA](.\imgs\CA.png)
+www.sjtu.edu.cn是上海交大官方网站中率先使用https的网站，这一点希望其他学院向网络信息中心寻求帮助进行反向代理。![CA](/imgs/CA.png)
 
 如有兴趣可以查看let encrypt的免费证书如何使用。
 
@@ -150,7 +150,7 @@ www.sjtu.edu.cn是上海交大官方网站中率先使用https的网站，这一
 
 该页面由于是交大官网首页，自适应处理较为完整，且手机适应也做得较好。
 
-![responsive](.\imgs\responsive.png)
+![responsive](/imgs/responsive.png)
 
 ## 代码结构的相关问题
 
@@ -165,6 +165,7 @@ www.sjtu.edu.cn是上海交大官方网站中率先使用https的网站，这一
 1. 图片加载迅速
 2. 手机自适应完整
 3. 动画优美
+4. https
 
 缺点：
 
