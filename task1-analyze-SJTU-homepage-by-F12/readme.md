@@ -2,7 +2,7 @@
 
 
 
-# Analyse of SJTU Homepage
+# Analysis of SJTU Homepage
 
 ## 简介
 
