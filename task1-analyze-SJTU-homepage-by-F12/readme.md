@@ -90,7 +90,7 @@ Elements实质上是在展示生成的DOM主要关切的是样式和绑定的事
 
 ![anime](imgs/anime.gif)
 
-![hover event](imgs/hover event.png)
+![hover event](imgs/hover-event.png)
 
 我在event listener中寻找了很久的该项动画，将所有的动作都删除了均无效果，最终寻找几个可能的css(style.css)
 
