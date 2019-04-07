@@ -82,7 +82,7 @@ PS : E2E test may wrong because the production environment need special settings
 
 the Spring Boot Backend is in the path of the backend, the front-end just has tiny modify.
 
-![word](/word.gif)
+![word](./word.gif)
 
 ## About Junit
 
@@ -104,3 +104,23 @@ the backend test file is in backend/src/test
 # run test
 .\mvnw clean test
 ```
+
+## 2019/04/07 About Restful Controller
+
+![postman](./postman.png)
+
+我们在v0.1中基本实现了相关的RestFul接口，如上图postman所示。
+
+此外我们添加了使用反射机制调用private函数进行白盒测试的相关测试函数，新增了测试报告
+
+`mvn test surefire-report:report`之后将在target/site中出现相应的report
+
+![test_post](./newTest.png)
+
+
+
+### 关于dictionary
+
+我们字典都存在resources/static中
+
+![report](./resources.png)
