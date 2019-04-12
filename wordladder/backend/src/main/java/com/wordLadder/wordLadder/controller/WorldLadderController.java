@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 @RestController
+@RequestMapping(value="/api")
 public class WorldLadderController {
 
     @RequestMapping(value = "/BFS", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
