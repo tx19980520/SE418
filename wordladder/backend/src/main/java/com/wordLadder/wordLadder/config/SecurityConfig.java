@@ -46,7 +46,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .cors().and().csrf().disable()
             .authorizeRequests()
                 .antMatchers("/login", "/login_form").permitAll()
-                .antMatchers("/api/*").hasRole("USER")
                 .antMatchers("/actuator/**").hasRole("ADMIN")
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
                 .permitAll()
@@ -78,7 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         httpServletResponse.setContentType("application/json;charset=utf-8");
                         PrintWriter out = httpServletResponse.getWriter();
                         System.out.println("password:"+httpServletRequest.getParameter("password"));
-                        out.write("{\"status\":\"error\",\"msg\":\""+e.getCause()+"\"}");
+                        out.write("{\"status\":\"error\",\"msg\":\""+e.getMessage()+"\"}");
                         out.flush();
                         out.close();
                     }
@@ -101,9 +100,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 })
                 .clearAuthentication(true)
                 .invalidateHttpSession(true)
-                .deleteCookies("JSESSIONID")
-                .and()
-                .sessionManagement().maximumSessions(1).maxSessionsPreventsLogin(true);
-
+                .deleteCookies("JSESSIONID");
     }
 }
