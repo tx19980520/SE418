@@ -124,3 +124,15 @@ the backend test file is in backend/src/test
 我们字典都存在resources/static中
 
 ![report](./resources.png)
+
+### 新增Actuator & ActuatorTest
+
+actuator 所有的endpoint都开启，详见配置文件，我们仅针对其中三个进行了测试，其余的用postman进行了分析观察，由于太繁琐我们就不进行测试了。
+
+Acrtuator的所有接口都必须是ADMIN的role才能进行，而其他的功能性接口是只需要用户登录即可使用，我们在Test的before中专门进行了登录。
+
+![login](./login.png)
+
+report:
+
+![report](./report.png)

@@ -14,18 +14,21 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 @RestController
+@RequestMapping(value="/api")
 public class WorldLadderController {
 
     @RequestMapping(value = "/BFS", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public JSONArray getWordLadder(@RequestBody JSONObject words) throws IOException
+    public JSONObject getWordLadder(@RequestBody JSONObject words) throws IOException
     {
         ClassPathResource dict = new ClassPathResource("static/small.json");
         WordLadder wl = new WordLadder(dict.getFile().getAbsolutePath());
         ArrayList<String> list = wl.BFS(words.get("input").toString(), words.get("output").toString());
-        System.out.println(list);
         JSONArray result = JSONArray.fromObject(list);
-        return result;
+        JSONObject response = new JSONObject();
+        response.put("result", result);
+        response.put("status", 200);
+        return response;
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
@@ -36,6 +39,7 @@ public class WorldLadderController {
         WordLadder wl = new WordLadder(dict.getFile().getAbsolutePath());
         JSONObject result = new JSONObject();
         result.put("has", wl.find(word));
+        result.put("status" , 200);
         return result;
     }
 }

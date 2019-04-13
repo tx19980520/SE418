@@ -1,4 +1,4 @@
-package com.wordLadder.wordLadder.wordLadder.wordladder;
+package com.wordLadder.wordLadder.wordLadder.controller;
 
 import com.wordLadder.wordLadder.wordladder.WordLadder;
 import net.sf.json.JSONObject;
