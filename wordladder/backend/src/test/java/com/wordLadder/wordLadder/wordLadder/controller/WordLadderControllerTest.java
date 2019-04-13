@@ -25,6 +25,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 import javax.servlet.http.HttpSession;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 /**
  * WorldLadderController Tester.
  *
@@ -74,10 +76,11 @@ public class WordLadderControllerTest {
         MvcResult result = mockMvc.perform(
                 MockMvcRequestBuilders.post("/api/BFS").content(input.toString()).session(session)
                         .header("Content-Type", "application/json")
-        ).andReturn();
+        )
+                .andExpect(status().isOk())
+                .andReturn();
         JSONObject wordladder = JSONObject.fromObject(result.getResponse().getContentAsString());
         Assert.assertEquals("未能完成wordLadder", 5, ((JSONArray)wordladder.get("result")).size());
-        Assert.assertEquals("status code", 200, wordladder.get("status"));
     }
 
     /**
@@ -90,11 +93,12 @@ public class WordLadderControllerTest {
         MvcResult result = mockMvc.perform(
                 MockMvcRequestBuilders.get("/api/search").session(session)
                         .param("word", "data")
-        ).andReturn();
+        )
+                .andExpect(status().isOk())
+                .andReturn();
         int status = result.getResponse().getStatus();
 
         Assert.assertEquals("应当存在单词data", JSONObject.fromObject(result.getResponse().getContentAsString()).get("has"), true);
-        Assert.assertEquals("status code", 200, status);
     }
 
 

@@ -21,6 +21,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes= WordLadderApplication.class)
 @ContextConfiguration(classes = WorldLadderController.class)
@@ -40,7 +42,7 @@ public class ActuatorTest {
         MvcResult result = mockMvc.perform(
                 MockMvcRequestBuilders.post("/login").content("username=admin&password=admin")
                         .header("Content-Type", "application/x-www-form-urlencoded")
-        ).andReturn();
+        ).andExpect(status().isOk()).andReturn();
         System.out.println(result.getResponse().getContentAsString());
         session = (MockHttpSession)result.getRequest().getSession();
     }
@@ -54,7 +56,7 @@ public class ActuatorTest {
     public void testHealth() throws Exception {
         MvcResult result = mockMvc.perform(
                 MockMvcRequestBuilders.get("/actuator/health").session(session)
-        ).andReturn();
+        ).andExpect(status().isOk()).andReturn();
         JSONObject response = JSONObject.fromObject(result.getResponse().getContentAsString());
         String status = (String)response.get("status");
         Assert.assertEquals("status: up => health", status, "UP");
@@ -65,7 +67,7 @@ public class ActuatorTest {
     public void testInfo() throws Exception {
         MvcResult result = mockMvc.perform(
                 MockMvcRequestBuilders.get("/actuator/info").session(session)
-        ).andReturn();
+        ).andExpect(status().isOk()).andReturn();
         JSONObject response = JSONObject.fromObject(result.getResponse().getContentAsString());
         JSONObject app = (JSONObject) response.get("app");
         String name = (String)app.get("name");
@@ -79,7 +81,7 @@ public class ActuatorTest {
     public void testEnv() throws Exception {
         MvcResult result = mockMvc.perform(
                 MockMvcRequestBuilders.get("/actuator/env").session(session)
-        ).andReturn();
+        ).andExpect(status().isOk()).andReturn();
         JSONObject response = JSONObject.fromObject(result.getResponse().getContentAsString());
         JSONArray app = (JSONArray) response.get("propertySources");
         JSONObject info = (JSONObject)app.get(3);
