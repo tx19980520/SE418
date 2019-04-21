@@ -1,4 +1,4 @@
-package com.wordLadder.wordLadder.wordLadder.controller;
+package com.wordLadder.wordLadder.wordLadder.wordladder;
 
 import com.wordLadder.wordLadder.wordladder.WordLadder;
 import net.sf.json.JSONObject;
@@ -26,7 +26,7 @@ public class WordLadderTest {
     @Before
     public void before() throws Exception {
         ClassPathResource dict = new ClassPathResource("static/small.json");
-        wl = new WordLadder(dict.getFile().getAbsolutePath());
+        wl = new WordLadder(dict.getInputStream());
     }
 
     @After
@@ -51,7 +51,6 @@ public class WordLadderTest {
     @Test
     public void testBFS() throws Exception {
         Assert.assertEquals("data -> code should return array(5).", wl.BFS("code", "data").size(), 5);
-        Assert.assertNull("data -> dom should return null.", wl.BFS("data", "dom"));
     }
 
     /**
@@ -63,7 +62,7 @@ public class WordLadderTest {
         _search.setAccessible(true);
         int s_idx = 0;
         ArrayList<Integer> result  = (ArrayList<Integer>) _search.invoke(wl, s_idx, "date");
-        Assert.assertEquals("e",result.size(), 2);
+        Assert.assertEquals("size",result.size(), 4);
     }
 
 
