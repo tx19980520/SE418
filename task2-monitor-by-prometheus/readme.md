@@ -51,8 +51,15 @@ memory:
 
 ![diff-response](./img/diff-response.png)
 
+
+
+![timeout](./img/timeout.png)
+
+即便是我们使用data->code使用JMeter进行测试，在20threads循环300次的情况下仍旧有概率会丢包。
+
 我们最后使用data->code进行测试，发现一个神奇的下降趋势：
 
 ![down](./img/down.png)
 
 最初我认为这是cache的原因，查阅了相关的资料后发现，这应该是JMeter模拟的正常现象，我们设置的是每个thread循环五次请求。在测试最开始，我们的是直接开启所有的thread几乎进行了同时访问，服务器的负载基本稳定在100%，之后部分的请求在后期结束，则服务器的负载会有些下降，越到测试的后期，部分thread已经结束生命周期，则响应的平均时间会有所下降。
+
