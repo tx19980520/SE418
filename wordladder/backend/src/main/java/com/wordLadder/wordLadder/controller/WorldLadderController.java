@@ -22,7 +22,7 @@ public class WorldLadderController {
     public JSONObject getWordLadder(@RequestBody JSONObject words) throws IOException
     {
         ClassPathResource dict = new ClassPathResource("static/small.json");
-        WordLadder wl = new WordLadder(dict.getFile().getAbsolutePath());
+        WordLadder wl = new WordLadder(dict.getInputStream());
         ArrayList<String> list = wl.BFS(words.get("input").toString(), words.get("output").toString());
         JSONArray result = JSONArray.fromObject(list);
         JSONObject response = new JSONObject();
@@ -36,7 +36,7 @@ public class WorldLadderController {
     public JSONObject search(@RequestParam("word") String word) throws IOException
     {
         ClassPathResource dict = new ClassPathResource("static/small.json");
-        WordLadder wl = new WordLadder(dict.getFile().getAbsolutePath());
+        WordLadder wl = new WordLadder(dict.getInputStream());
         JSONObject result = new JSONObject();
         result.put("has", wl.find(word));
         result.put("status" , 200);

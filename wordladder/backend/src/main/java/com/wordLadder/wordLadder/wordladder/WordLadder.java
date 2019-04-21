@@ -3,28 +3,28 @@ package com.wordLadder.wordLadder.wordladder;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.ObjectUtils;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
-import java.io.FileReader;
-import java.io.FileNotFoundException;
+
 import net.sf.json.JSONArray;
 
 
 public class WordLadder {
-    private String dictionary_path;
+    private InputStream input;
     private  ArrayList<String> dict;
-    public WordLadder(String dictionary_path)
+    public WordLadder(InputStream input)
     {
-        this.dictionary_path = dictionary_path;
+        this.input = input;
         StringBuilder jsonString = new StringBuilder();
         try{
-            FileReader fr = new FileReader(this.dictionary_path);
-            char[] chs = new char[1024] ;
-            int len = 0 ;
-            while((len=fr.read(chs))!=-1) {
-                jsonString.append(chs);
+            InputStreamReader reader =  new InputStreamReader(this.input);
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String strLine = null;
+            while(null != (strLine = bufferedReader.readLine()))
+            {
+                jsonString.append(strLine);
             }
-            fr.close();
+
         }catch (FileNotFoundException e)
         {
             System.out.println(e.getMessage());
