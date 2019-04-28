@@ -10,7 +10,7 @@
 FROM openjdk:8-jdk-alpine
 MAINTAINER TY
 EXPOSE 8080
-COPY ./wordladder.jar /wordladder.jar #方便助教改直接拷贝进去了，更好的肯定是设置Volumn
+COPY ./wordladder.jar /wordladder.jar #方便助教改直接拷贝进去了，更好的肯定是设置Volume
 ENTRYPOINT [ "java", "-jar", "/wordladder.jar" ]
 ```
 
