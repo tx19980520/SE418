@@ -5,10 +5,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Consumer implements Runnable {
-    private LinkedBlockingDeque<Request> requests;
+    private RequestLinkedBlockingDeque<Request> requests;
     private AtomicInteger request;
 
-    public Consumer(LinkedBlockingDeque<Request> requests, AtomicInteger request) {
+    public Consumer(RequestLinkedBlockingDeque<Request> requests, AtomicInteger request) {
         this.requests = requests;
         this.request = request;
     }
@@ -19,7 +19,7 @@ public class Consumer implements Runnable {
         try {
             while (true) {
                 long timeout = 2000;
-                if(this.requests.offerLast(new Request(), timeout, TimeUnit.MILLISECONDS))
+                if(this.requests.getRequests(new Request(), timeout, TimeUnit.MILLISECONDS))
                 {
                     System.out.println("add new Request success!");
                     this.request.incrementAndGet();
