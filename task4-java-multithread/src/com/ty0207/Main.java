@@ -7,10 +7,10 @@ public class Main {
 
 
     public static void main(String[] args) throws InterruptedException {
-        LinkedBlockingDeque<Request> requests = new LinkedBlockingDeque<>(20);
-        AtomicInteger success = new AtomicInteger();
         AtomicInteger fail = new AtomicInteger();
         AtomicInteger count = new AtomicInteger();
+        RequestLinkedBlockingDeque<Request> requests = new RequestLinkedBlockingDeque<>(20, fail);
+        AtomicInteger success = new AtomicInteger();
         AtomicInteger request = new AtomicInteger();
         Producer producer1 = new Producer(count, requests, fail, success);
         Producer producer2 = new Producer(count, requests, fail, success);
@@ -27,6 +27,7 @@ public class Main {
         System.out.println("shutdowning");
         service.shutdownNow();
         System.out.println("shutdowned");
-        System.out.println("requests: " + request +" success: " + success + " fail :" + fail);
+        int wait = request.get() - success.get() - fail.get();
+        System.out.println("requests: " + request +" success: " + success + " fail :" + fail + " waiting: " + wait);
     }
 }

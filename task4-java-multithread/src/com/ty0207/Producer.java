@@ -10,9 +10,9 @@ public class Producer implements Runnable {
     private AtomicInteger count;
     private AtomicInteger success;
     private AtomicInteger fail;
-    private LinkedBlockingDeque<Request> requests;
+    private RequestLinkedBlockingDeque<Request> requests;
 
-    public Producer(AtomicInteger count, LinkedBlockingDeque<Request> requests, AtomicInteger success, AtomicInteger fail) {
+    public Producer(AtomicInteger count, RequestLinkedBlockingDeque<Request> requests, AtomicInteger fail, AtomicInteger success) {
         this.count = count;
         this.requests = requests;
         this.success = success;
@@ -28,84 +28,33 @@ public class Producer implements Runnable {
                 // add the production count
                 Integer need = r.nextInt(4) + 1;// 1-4
                 Integer count = this.count.addAndGet(need);
-                System.out.println("production now: "+ count + " by " + Thread.currentThread().getId());
+                System.out.println("production now: " + count + " by " + Thread.currentThread().getId());
                 // deal with request
                 System.out.println("requests size: " + this.requests.size());
-                if(this.requests.size() > 5)
-                {
-                    System.out.println("FILO");
-                    // need FILO
-                    try{
-                        Request request = this.requests.getLast();
-                        if(request.getNum() <= this.count.get())
-                        {
-                            System.out.println("request "+ request.getNum() + " has " + this.count.get() );
-                            this.count.updateAndGet(x -> (x - request.getNum()));
-                            this.requests.remove(request);
-                            this.success.incrementAndGet();
-                        }
-                        else{
-                            System.out.println("count last: " + this.count.get());
-                            break;
-                        }
+                try {
+                    Request request = this.requests.takeRequests();
+                    if (request.getNum() <= this.count.get()) {
+                        System.out.println("request " + request.getNum() + " has " + this.count.get());
+                        this.count.updateAndGet(x -> (x - request.getNum()));
+                        this.requests.remove(request);
+                        System.out.println("success" + this.success.incrementAndGet());
+
+                    } else {
+                        System.out.println("count last: " + this.count.get());
                     }
-                    catch (NoSuchElementException e)
-                    {
+                } catch (Exception e) {
+                    if (e instanceof NoSuchElementException) {
                         System.out.println("now there is no request.");
-                        break;
-                    }
-                }
-                else{
-                    // can FIFO
-                    while(true)
-                    {
-                        System.out.println("FIFO");
-                        try{
-                            Request request = this.requests.getFirst();
-                            if(request.getNum() <= this.count.get())
-                            {
-                                System.out.println("request "+ request.getNum() + " has " + this.count.get() );
-                                this.count.updateAndGet(x -> (x - request.getNum()));
-                                this.requests.remove(request);
-                                this.success.incrementAndGet();
-                            }
-                            else{
-                                System.out.println("count last: " + this.count.get());
-                                break;
-                            }
-                        }
-                        catch (NoSuchElementException e)
-                        {
-                            System.out.println("now there is no request.");
-                            break;
-                        }
+                    } else if (e instanceof NullPointerException) {
+                        System.out.println("now there is no request.");
                     }
                 }
                 System.out.println("clean old request");
+                this.requests.clean();
                 // clean the old request
-                while(true)
-                {
-                    // sure you can choose use System.currentTimeMillis multitimes
-                    long now = System.currentTimeMillis();
-                    try{
-                        Request request = this.requests.getFirst();
-                        if(now - request.getTime() > 2000)
-                        {
-                            // need clean
-                            System.out.println("request " + request.hashCode() + "is out.");
-                            this.requests.takeFirst();
-                            this.fail.incrementAndGet();
-                        }
-                        else{
-                            break;
-                        }
-                    }catch (NoSuchElementException ignored)
-                    {
-                       break;
-                    }
-                }
-                System.out.println("Producer sleep 4000ms");
-                Thread.sleep(4000);
+                // sure you can choose use System.currentTimeMillis multitimes
+                System.out.println("Producer sleep 2000ms");
+                Thread.sleep(2000);
             }
         } catch (Exception e) {
             //e.printStackTrace();
@@ -127,7 +76,7 @@ public class Producer implements Runnable {
         return requests;
     }
 
-    public void setRequests(LinkedBlockingDeque<Request> requests) {
+    public void setRequests(RequestLinkedBlockingDeque<Request> requests) {
         this.requests = requests;
     }
 }
